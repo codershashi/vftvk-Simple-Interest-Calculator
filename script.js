@@ -3,8 +3,20 @@
 function computeInterest(){
 
     var principalValue = parseFloat(document.getElementById("principal").value);
+    console.log(principalValue);
+    if (isNaN(principalValue)){
+	alert("Please Enter a Positive Principle Value!");
+        document.getElementById("principal").focus();
+        principalValue = parseFloat(document.getElementById("principal").value);
+    }
+    if (principalValue <= 0.0){
+	alert("Please Enter a Positive Principle Value!");
+        document.getElementById("principal").focus();
+        principalValue = parseFloat(document.getElementById("principal").value);
+    }
     
     var interestRate = parseFloat(document.getElementById("rate").value);
+   
 
     var years = parseInt(document.getElementById("years").value);
     
@@ -32,9 +44,10 @@ function validatePrincipleAmount(){
     var principalValue = parseInt(document.getElementById("principal").value);
     if(principalValue.value == ""){
         alert("Please Enter Principle Value!");
-        principalValue.focus();
+        document.getElementById("principal").focus();
+        
     }
-    if(principalValue < 0){
+    if(principalValue <= 0){
         alert("Please Enter a Positive Principle Value!");
         document.getElementById("principal").focus();
     }
