@@ -1,3 +1,4 @@
+/*Function to compute simple interest */
 
 function computeInterest(){
 
@@ -19,11 +20,15 @@ function computeInterest(){
     
 }
 
+/* Function to get rate of interest */
+
 function ratevalue(){
     document.getElementById("rangeValue").innerHTML = document.getElementById("rate").value;
 }
 
-function principleAmount(){
+/* Function to Validate Principle Amount */
+
+function validatePrincipleAmount(){
     var principalValue = parseInt(document.getElementById("principal").value);
     if(principalValue.value == ""){
         alert("Please Enter Principle Value!");
